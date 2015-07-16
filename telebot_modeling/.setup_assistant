@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: telebot
+    relative_path: urdf/telebot.urdf
+  SRDF:
+    relative_path: config/telebot.srdf
+  CONFIG:
+    generated_timestamp: 1436452462

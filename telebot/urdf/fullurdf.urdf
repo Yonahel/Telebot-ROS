@@ -1,0 +1,94 @@
+<robot name="telebot"> 
+<!-- Base where wheels are -->
+ <link name="base_link">
+   <inertial>
+     <origin xyz="0 0 1" rpy="0 0 0"/>
+     <mass value="1"/>
+     <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+   </inertial>
+
+   <visual>
+     <origin xyz="0 0 1" rpy="0 0 0" />
+     <geometry>
+       <box size="1 1 1" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+
+   <collision>
+     <origin xyz="0 0 1" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="1" length="0.5"/>
+     </geometry>
+   </collision>
+ </link>
+
+<!-- Lower section of telebot -->
+ <link name="leg_link">
+   <inertial>
+     <origin xyz="0 0 2.5" rpy="0 0 0"/>
+     <mass value="2"/>
+     <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+   </inertial>
+
+   <visual>
+     <origin xyz="0 0 2.5" rpy="0 0 0" />
+     <geometry>
+       <box size="2 2 2" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+
+   <collision>
+     <origin xyz="0 0 2.5" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="2" length="2"/>
+     </geometry>
+   </collision>
+ </link> 
+
+<!-- Telebot upper torso -->
+ <link name="body_link">
+   <inertial>
+     <origin xyz="0 0 5" rpy="0 0 0"/>
+     <mass value="3"/>
+     <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+   </inertial>
+
+   <visual>
+     <origin xyz="0 0 5" rpy="0 0 0" />
+     <geometry>
+       <box size="3 3 3" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+
+   <collision>
+     <origin xyz="0 0 5" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="3" length="3"/>
+     </geometry>
+   </collision>
+ </link> 
+
+  <joint name="lower_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="leg_link"/>
+    <origin xyz="0 0 1.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="middle_joint" type="fixed">
+    <parent link="leg_link"/>
+    <child link="body_link"/>
+    <origin xyz="0 0 3.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+</robot>

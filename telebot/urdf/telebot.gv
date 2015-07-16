@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"leg_link" [label="leg_link"];
+"body1_link" [label="body1_link"];
+"body2_link" [label="body2_link"];
+"lsh_link" [label="lsh_link"];
+"l2sh_link" [label="l2sh_link"];
+"lb_link" [label="lb_link"];
+"le_link" [label="le_link"];
+"lf_link" [label="lf_link"];
+"lw_link" [label="lw_link"];
+"neck_link" [label="neck_link"];
+"head_link" [label="head_link"];
+"rsh_link" [label="rsh_link"];
+"r2sh_link" [label="r2sh_link"];
+"rb_link" [label="rb_link"];
+"re_link" [label="re_link"];
+"rf_link" [label="rf_link"];
+"rw_link" [label="rw_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "lower_joint" [label="xyz: 0 0 0.11 \nrpy: 0 -0 0"]
+"lower_joint" -> "leg_link"
+"leg_link" -> "middle_joint" [label="xyz: 0 0 0.59 \nrpy: 0 -0 0"]
+"middle_joint" -> "body1_link"
+"body1_link" -> "middle2_joint" [label="xyz: 0 0 0.37 \nrpy: 0 -0 0"]
+"middle2_joint" -> "body2_link"
+"body2_link" -> "lshoulder_joint" [label="xyz: 0.3025 0 0.23 \nrpy: 0 -0 0"]
+"lshoulder_joint" -> "lsh_link"
+"lsh_link" -> "l2shoulder_joint" [label="xyz: 0.05 0 -0.0325 \nrpy: 0 -0 0"]
+"l2shoulder_joint" -> "l2sh_link"
+"l2sh_link" -> "lupperarm_joint" [label="xyz: 0 0 -0.06 \nrpy: 0 -0 0"]
+"lupperarm_joint" -> "lb_link"
+"lb_link" -> "lelbow_joint" [label="xyz: 0 0 -0.16 \nrpy: 0 -0 0"]
+"lelbow_joint" -> "le_link"
+"le_link" -> "lforearm_joint" [label="xyz: 0 0 -0.075 \nrpy: 0 -0 0"]
+"lforearm_joint" -> "lf_link"
+"lf_link" -> "lwrist_joint" [label="xyz: 0 0 -0.15 \nrpy: 0 -0 0"]
+"lwrist_joint" -> "lw_link"
+"body2_link" -> "neck_joint" [label="xyz: 0 0 0.25 \nrpy: 0 -0 0"]
+"neck_joint" -> "neck_link"
+"neck_link" -> "head_joint" [label="xyz: 0 0 0.105 \nrpy: 0 -0 0"]
+"head_joint" -> "head_link"
+"body2_link" -> "rshoulder_joint" [label="xyz: -0.3025 0 0.23 \nrpy: 0 -0 0"]
+"rshoulder_joint" -> "rsh_link"
+"rsh_link" -> "r2shoulder_joint" [label="xyz: -0.05 0 -0.0325 \nrpy: 0 -0 0"]
+"r2shoulder_joint" -> "r2sh_link"
+"r2sh_link" -> "rupperarm_joint" [label="xyz: 0 0 -0.06 \nrpy: 0 -0 0"]
+"rupperarm_joint" -> "rb_link"
+"rb_link" -> "relbow_joint" [label="xyz: 0 0 -0.16 \nrpy: 0 -0 0"]
+"relbow_joint" -> "re_link"
+"re_link" -> "rforearm_joint" [label="xyz: 0 0 -0.075 \nrpy: 0 -0 0"]
+"rforearm_joint" -> "rf_link"
+"rf_link" -> "rwrist_joint" [label="xyz: 0 0 -0.15 \nrpy: 0 -0 0"]
+"rwrist_joint" -> "rw_link"
+}

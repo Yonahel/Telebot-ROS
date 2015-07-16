@@ -1,0 +1,8 @@
+int16 ID
+int16 GOAL_POS
+int16 SPEED
+int16 F1
+int16 F2
+int16 F3
+int16 F4 
+int16 F5

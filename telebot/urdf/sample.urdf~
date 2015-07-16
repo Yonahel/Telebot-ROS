@@ -1,0 +1,338 @@
+<robot name="telebot"> 
+<!-- Base where wheels are -->
+ <link name="base_link">
+   <visual>
+     <origin xyz="0 0 1" rpy="0 0 0" />
+     <geometry>
+       <box size="1 1 1" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Lower section of telebot -->
+ <link name="leg_link">
+   <visual>
+     <origin xyz="0 0 1.5" rpy="0 0 0" />
+     <geometry>
+       <box size="1.5 1.5 1.5" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link> 
+
+<!-- Telebot upper torso -->
+ <link name="body_link">
+   <visual>
+     <origin xyz="0 0 2" rpy="0 0 0" />
+     <geometry>
+       <box size="2.5 1.5 2.5" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link> 
+
+<!-- Telebot neck -->
+ <link name="neck_link">
+   <visual>
+     <origin xyz="0 0 .325" rpy="0 0 0" />
+     <geometry>
+       <cylinder length="0.75" radius="0.1" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link> 
+
+<!-- Telebot head -->
+ <link name="head_link">
+   <visual>
+     <origin xyz="0 0 1" rpy="0 0 0" />
+     <geometry>
+       <sphere radius="0.5" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link> 
+
+<!-- Telebot left filler -->
+ <link name="lfil_link">
+   <visual>
+     <origin xyz="0.1 0 0" rpy="0 0 0" />
+     <geometry>
+       <box size="0.2 0.2 0.2" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right filler -->
+ <link name="rfil_link">
+   <visual>
+     <origin xyz="-0.1 0 0" rpy="0 0 0" />
+     <geometry>
+       <box size="0.2 0.2 0.2" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot left shoulder -->
+ <link name="lsh_link">
+   <visual>
+     <origin xyz="0.25 0 0" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right shoulder -->
+ <link name="rsh_link">
+   <visual>
+     <origin xyz="-0.25 0 0" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Cyan">
+       <color rgba="0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot left shoulder 2-->
+ <link name="l2sh_link">
+   <visual>
+     <origin xyz="0 0 -0.25" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Idk">
+       <color rgba="0 0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right shoulder 2 -->
+ <link name="r2sh_link">
+   <visual>
+     <origin xyz="0 0 -0.25" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Idk">
+       <color rgba="0 0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot left bicep-->
+ <link name="lb_link">
+   <visual>
+     <origin xyz="0 0 -0.75" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 1" />
+     </geometry>
+     <material name="Idk2">
+       <color rgba="0 1.0 0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right bicep -->
+ <link name="rb_link">
+   <visual>
+     <origin xyz="0 0 -0.75" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 1" />
+     </geometry>
+     <material name="Idk2">
+       <color rgba="0 1.0 0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot left elbow-->
+ <link name="le_link">
+   <visual>
+     <origin xyz="0 0 -0.25" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Idk3">
+       <color rgba="1.0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right elbow -->
+ <link name="re_link">
+   <visual>
+     <origin xyz="0 0 -0.25" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 0.5" />
+     </geometry>
+     <material name="Idk3">
+       <color rgba="1.0 1.0 1.0 1.0"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot left forearm-->
+ <link name="lf_link">
+   <visual>
+     <origin xyz="0 0 -0.5" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 1" />
+     </geometry>
+     <material name="Idk4">
+       <color rgba="0.3 0.7 0.2 0.5"/>
+     </material>
+   </visual>
+ </link>
+
+<!-- Telebot right forearm -->
+ <link name="rf_link">
+   <visual>
+     <origin xyz="0 0 -0.5" rpy="0 0 0" />
+     <geometry>
+       <box size="0.5 0.5 1" />
+     </geometry>
+     <material name="Idk4">
+       <color rgba="0.3 0.7 0.2 0.5"/>
+     </material>
+   </visual>
+ </link>
+
+
+
+<!-- Joints -->
+  <joint name="lower_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="leg_link"/>
+    <origin xyz="0 0 0.75" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="middle_joint" type="fixed">
+    <parent link="leg_link"/>
+    <child link="body_link"/>
+    <origin xyz="0 0 1.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="neck_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="neck_link"/>
+    <origin xyz="0 0 3" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint>  
+
+  <joint name="head_joint" type="fixed">
+    <parent link="neck_link"/>
+    <child link="head_link"/>
+    <origin xyz="0 0 0.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="lfil_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="lfil_link"/>
+    <origin xyz="1.25 0 3" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="rfil_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="rfil_link"/>
+    <origin xyz="-1.25 0 3" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="lshoulder_joint" type="continuous">
+    <parent link="lfil_link"/>
+    <child link="lsh_link"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="rshoulder_joint" type="continuous">
+    <parent link="rfil_link"/>
+    <child link="rsh_link"/>
+    <origin xyz="-0.2 0 0" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="l2shoulder_joint" type="continuous">
+    <parent link="lsh_link"/>
+    <child link="l2sh_link"/>
+    <origin xyz="0.25 0 -0.25" rpy="0 0 0" /> 
+    <axis xyz="1 0 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="r2shoulder_joint" type="continuous">
+    <parent link="rsh_link"/>
+    <child link="r2sh_link"/>
+    <origin xyz="-0.25 0 -0.25" rpy="0 0 0" /> 
+    <axis xyz="1 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="lupperarm_joint" type="continuous">
+    <parent link="l2sh_link"/>
+    <child link="lb_link"/>
+    <origin xyz="0 0 -0.25" rpy="0 0 0" /> 
+    <axis xyz="0 0 1" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="rupperarm_joint" type="continuous">
+    <parent link="r2sh_link"/>
+    <child link="rb_link"/>
+    <origin xyz="0 0 -0.25" rpy="0 0 0" /> 
+    <axis xyz="0 0 1" rpy="0 0 0" />
+  </joint>
+
+  <joint name="lelbow_joint" type="continuous">
+    <parent link="lb_link"/>
+    <child link="le_link"/>
+    <origin xyz="0 0 -1.25" rpy="0 0 0" /> 
+    <axis xyz="1 0 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="relbow_joint" type="continuous">
+    <parent link="rb_link"/>
+    <child link="re_link"/>
+    <origin xyz="0 0 -1.25" rpy="0 0 0" /> 
+    <axis xyz="1 0 0" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="lforearm_joint" type="continuous">
+    <parent link="le_link"/>
+    <child link="lf_link"/>
+    <origin xyz="0 0 -0.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 1" rpy="0 0 0" />
+  </joint> 
+
+  <joint name="rforearm_joint" type="continuous">
+    <parent link="re_link"/>
+    <child link="rf_link"/>
+    <origin xyz="0 0 -0.5" rpy="0 0 0" /> 
+    <axis xyz="0 0 1" rpy="0 0 0" />
+  </joint> 
+
+</robot>
