@@ -5,4 +5,4 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/telebot.srdf
   CONFIG:
-    generated_timestamp: 1436452462
+    generated_timestamp: 1437582875

@@ -52,7 +52,7 @@ planner_configs:
     max_nearest_neighbors: 10  # use k nearest neighbors. default: 10
   PRMstarkConfigDefault:
     type: geometric::PRMstar
-Left Arm:
+Left_Arm:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -67,7 +67,7 @@ Left Arm:
     - PRMstarkConfigDefault
   projection_evaluator: joints(lshoulder_joint,l2shoulder_joint)
   longest_valid_segment_fraction: 0.05
-Right Arm:
+Right_Arm:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -82,7 +82,7 @@ Right Arm:
     - PRMstarkConfigDefault
   projection_evaluator: joints(rshoulder_joint,r2shoulder_joint)
   longest_valid_segment_fraction: 0.05
-Left Hand:
+Left_Hand:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
@@ -95,20 +95,7 @@ Left Hand:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-Right Hand:
-  planner_configs:
-    - SBLkConfigDefault
-    - ESTkConfigDefault
-    - LBKPIECEkConfigDefault
-    - BKPIECEkConfigDefault
-    - KPIECEkConfigDefault
-    - RRTkConfigDefault
-    - RRTConnectkConfigDefault
-    - RRTstarkConfigDefault
-    - TRRTkConfigDefault
-    - PRMkConfigDefault
-    - PRMstarkConfigDefault
-Telebot:
+Right_Hand:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault

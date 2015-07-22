@@ -96,13 +96,7 @@ int main(int argc, char **argv) {
 
      ros::Publisher pub = nh.advertise<telebot::Coord>("motor_coord", 1000);
 
-     ros::spinOnce();
-
-     while(ros::ok()){
-
      pub.publish(msg2);
 
-     ros::spinOnce();
-
-     }
+     ros::spin();
 }

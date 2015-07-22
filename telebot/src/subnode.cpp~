@@ -13,9 +13,9 @@ void dataMessageRecieved(const telebot::Coord msg) {
 	
 
         for(int i = 0; i < 12; i++){
-	ID << static_cast<int>(msg.ID[i]);
-	GOAL << static_cast<int>(msg.GOAL_POS[i]);
-	SPD << static_cast<int>(msg.SPEED[i]);
+	ID << msg.ID[i];
+	GOAL << msg.GOAL_POS[i];
+	SPD << msg.SPEED[i];
 	
 	
 	std::string data = std::string() + '<' + ID.str() + ' ' + GOAL.str() + ' ' + SPD.str() + '>';	

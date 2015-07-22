@@ -1,5 +1,5 @@
 controller_list:
-  - name: fake_Left_Arm_controller
+  - name: Left Arm_controller
     joints:
       - lshoulder_joint
       - l2shoulder_joint
@@ -7,7 +7,7 @@ controller_list:
       - lelbow_joint
       - lforearm_joint
       - lwrist_joint
-  - name: fake_Right_Arm_controller
+  - name: Right Arm_controller
     joints:
       - rshoulder_joint
       - r2shoulder_joint
@@ -15,12 +15,12 @@ controller_list:
       - relbow_joint
       - rforearm_joint
       - rwrist_joint
-  - name: fake_Left_Hand_controller
+  - name: Left Hand_controller
     joints:
       - lwrist_joint
-  - name: fake_Right_Hand_controller
+  - name: Right Hand_controller
     joints:
       - rwrist_joint
-  - name: fake_Head_controller
+  - name: Head_controller
     joints:
       []
