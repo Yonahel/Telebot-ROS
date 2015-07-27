@@ -2,7 +2,7 @@
 <!-- Base where wheels are -->
  <link name="base_link">
    <visual>
-     <origin xyz="0 0 1" rpy="0 0 0" />
+     <origin xyz="0 0 0" rpy="0 0 0" />
      <geometry>
        <box size="0.205 0.175 0.220" />
      </geometry>
@@ -22,7 +22,7 @@
 <!-- Lower section of telebot -->
  <link name="leg_link">
    <visual>
-     <origin xyz="0 0 0.295" rpy="0 0 0" />
+     <origin xyz="0 0 0.300" rpy="0 0 0" />
      <geometry>
        <box size="0.495 0.310 0.590" />
      </geometry>
@@ -402,7 +402,7 @@
     <child link="lsh_link"/>
     <origin xyz="0.3025 0 0.230" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="rshoulder_joint" type="continuous">
@@ -410,7 +410,7 @@
     <child link="rsh_link"/>
     <origin xyz="-0.3025 0 0.230" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint>
 
   <joint name="l2shoulder_joint" type="continuous">
@@ -418,7 +418,7 @@
     <child link="l2sh_link"/>
     <origin xyz="0.050 0 -0.0325" rpy="0 0 0" /> 
     <axis xyz="1 0 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="r2shoulder_joint" type="continuous">
@@ -426,7 +426,7 @@
     <child link="r2sh_link"/>
     <origin xyz="-0.050 0 -0.0325" rpy="0 0 0" /> 
     <axis xyz="1 0 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint>
 
   <joint name="lupperarm_joint" type="continuous">
@@ -434,7 +434,7 @@
     <child link="lb_link"/>
     <origin xyz="0 0 -0.060" rpy="0 0 0" /> 
     <axis xyz="0 0 1" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="rupperarm_joint" type="continuous">
@@ -442,7 +442,7 @@
     <child link="rb_link"/>
     <origin xyz="0 0 -0.060" rpy="0 0 0" /> 
     <axis xyz="0 0 1" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint>
 
   <joint name="lelbow_joint" type="continuous">
@@ -450,7 +450,7 @@
     <child link="le_link"/>
     <origin xyz="0 0 -0.160" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="relbow_joint" type="continuous">
@@ -458,7 +458,7 @@
     <child link="re_link"/>
     <origin xyz="0 0 -0.160" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="0" upper="1.57" />
+    <limit lower="0" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="lforearm_joint" type="continuous">
@@ -466,7 +466,7 @@
     <child link="lf_link"/>
     <origin xyz="0 0 -0.075" rpy="0 0 0" /> 
     <axis xyz="0 0 1" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="rforearm_joint" type="continuous">
@@ -474,7 +474,7 @@
     <child link="rf_link"/>
     <origin xyz="0 0 -0.075" rpy="0 0 0" /> 
     <axis xyz="0 0 1" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="lwrist_joint" type="continuous">
@@ -482,7 +482,7 @@
     <child link="lw_link"/>
     <origin xyz="0 0 -0.150" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
   <joint name="rwrist_joint" type="continuous">
@@ -490,7 +490,7 @@
     <child link="rw_link"/>
     <origin xyz="0 0 -0.150" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-    <limit lower="-1.57" upper="1.57" />
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1" />
   </joint> 
 
 </robot>

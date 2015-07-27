@@ -65,8 +65,6 @@ Left_Arm:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-  projection_evaluator: joints(lshoulder_joint,l2shoulder_joint)
-  longest_valid_segment_fraction: 0.05
 Right_Arm:
   planner_configs:
     - SBLkConfigDefault
@@ -109,6 +107,19 @@ Right_Hand:
     - PRMkConfigDefault
     - PRMstarkConfigDefault
 Head:
+  planner_configs:
+    - SBLkConfigDefault
+    - ESTkConfigDefault
+    - LBKPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - KPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - TRRTkConfigDefault
+    - PRMkConfigDefault
+    - PRMstarkConfigDefault
+Telebot:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault

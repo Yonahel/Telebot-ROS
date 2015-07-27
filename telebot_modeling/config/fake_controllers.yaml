@@ -7,6 +7,12 @@ controller_list:
       - lelbow_joint
       - lforearm_joint
       - lwrist_joint
+      - rshoulder_joint
+      - r2shoulder_joint
+      - rupperarm_joint
+      - relbow_joint
+      - rforearm_joint
+      - rwrist_joint
   - name: fake_Right_Arm_controller
     joints:
       - rshoulder_joint
@@ -17,10 +23,34 @@ controller_list:
       - rwrist_joint
   - name: fake_Left_Hand_controller
     joints:
-      - lwrist_joint
+      - lshoulder_joint
+      - l2shoulder_joint
+      - lupperarm_joint
+      - lelbow_joint
+      - lforearm_joint
+      - rshoulder_joint
+      - r2shoulder_joint
+      - rupperarm_joint
+      - relbow_joint
+      - rforearm_joint
+      - rwrist_joint
   - name: fake_Right_Hand_controller
     joints:
       - rwrist_joint
   - name: fake_Head_controller
     joints:
       []
+  - name: fake_Telebot_controller
+    joints:
+      - lshoulder_joint
+      - l2shoulder_joint
+      - lupperarm_joint
+      - lelbow_joint
+      - lforearm_joint
+      - lwrist_joint
+      - rshoulder_joint
+      - r2shoulder_joint
+      - rupperarm_joint
+      - relbow_joint
+      - rforearm_joint
+      - rwrist_joint

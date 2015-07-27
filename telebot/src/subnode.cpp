@@ -3,7 +3,15 @@
 //This header defines the standard ROS classes.
 #include <ros/ros.h>
 #include <telebot/Coord.h>
+#include <stdlib.h>
+#include <time.h>
 #include "SimpleSerial.h"
+
+void sleepr(unsigned int mseconds){
+
+    clock_t goal = mseconds*1000 + clock();
+    while (goal > clock());
+}
 
 void dataMessageRecieved(const telebot::Coord msg) {
      
@@ -20,10 +28,19 @@ void dataMessageRecieved(const telebot::Coord msg) {
 	
 	std::string data = std::string() + '<' + ID.str() + ' ' + GOAL.str() + ' ' + SPD.str() + '>';	
 	ROS_INFO_STREAM(data);
-        SimpleSerial serial("/dev/ttyUSB0",57600);
+        //SimpleSerial serial("/dev/ttyUSB0",57600);
 
-        serial.writeString(data);
+        //serial.writeString(data);
+	ID.str("");
+	GOAL.str("");
+	SPD.str("");
+
+	ID.clear();
+	GOAL.str();
+	SPD.str();
+	sleepr(50);
 	}
+	
 }
 
 int main(int argc, char **argv) {
