@@ -38,7 +38,7 @@ void dataMessageRecieved(const telebot::Coord msg) {
 	ID.clear();
 	GOAL.str();
 	SPD.str();
-	sleepr(100);
+	sleepr(50);
 	}
 	
 }

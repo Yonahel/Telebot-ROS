@@ -28,9 +28,9 @@ void dataMessageRecieved(const telebot::Coord msg) {
 	
 	std::string data = std::string() + '<' + ID.str() + ' ' + GOAL.str() + ' ' + SPD.str() + '>';	
 	ROS_INFO_STREAM(data);
-        //SimpleSerial serial("/dev/ttyUSB0",57600);
+        SimpleSerial serial("/dev/ttyUSB0",57600);
 
-        //serial.writeString(data);
+        serial.writeString(data);
 	ID.str("");
 	GOAL.str("");
 	SPD.str("");
