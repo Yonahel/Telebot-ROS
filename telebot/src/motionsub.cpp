@@ -1,0 +1,57 @@
+//This program subscribes to telebot and shows its messages on the screen
+
+//This header defines the standard ROS classes.
+#include <ros/ros.h>
+#include <telebot/Coord.h>
+#include <stdlib.h>
+#include <time.h>
+#include "SimpleSerial.h"
+
+void sleepr(unsigned int mseconds){
+
+    clock_t goal = mseconds*1000 + clock();
+    while (goal > clock());
+}
+
+void dataMessageRecieved(const telebot::Coord msg) {
+     
+	std::ostringstream ID;
+	std::ostringstream GOAL;	
+	std::ostringstream SPD;
+	
+
+        for(int i = 0; i < 12; i++){
+	ID << static_cast<int>(msg.ID[i]);
+	GOAL << static_cast<int>(msg.GOAL_POS[i]);
+	SPD << static_cast<int>(msg.SPEED[i]);
+	
+	
+	std::string data = std::string() + '<' + ID.str() + ' ' + GOAL.str() + ' ' + SPD.str() + '>';	
+	ROS_INFO_STREAM(data);
+        SimpleSerial serial("/dev/ttyUSB0",57600);
+
+        serial.writeString(data);
+	ID.str("");
+	GOAL.str("");
+	SPD.str("");
+
+	ID.clear();
+	GOAL.str();
+	SPD.str();
+	sleepr(50);
+	}
+	
+}
+
+int main(int argc, char **argv) {
+     //Initialize the ROS system and become a node
+     ros::init(argc, argv, "motion_sub");
+     ros::NodeHandle nh;
+
+     //Create a subscriber object
+     ros::Subscriber sub = nh.subscribe("motor_coord", 1000, &dataMessageRecieved);
+
+     //Let ROS take over
+     ros::spin();
+     
+}
