@@ -5,6 +5,7 @@ project(telebot)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED)
+find_package(OpenCV REQUIRED)
 find_package(catkin REQUIRED COMPONENTS 
      roscpp
      rospy
@@ -53,6 +54,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
      FILES
      Coord.msg
+     Mobility.msg
 #    Message2.msg
 )
 
@@ -100,6 +102,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 #include_directories(include src/telebot/SimpleSerial.h)
+include_directories(${OpenCV_INCLUDE_DIRS})
 
 ## Declare a cpp library
 # add_library(telebot
@@ -108,9 +111,15 @@ catkin_package(
 
 ## Declare a cpp executable
 # add_executable(telebot_node src/telebot_node.cpp)
-add_executable(telebot_pub src/pubnode.cpp)
-add_executable(telebot_sub src/subnode.cpp)
-add_executable(stream_pub src/streampub.cpp)
+add_executable(motion_pub src/motionpub.cpp)
+add_executable(motion_sub src/motionsub.cpp)
+add_executable(mobility_pub src/mobilitypub.cpp)
+add_executable(mobility_sub src/mobilitysub.cpp)
+add_executable(lstream_pub src/lefteyepub.cpp)
+add_executable(rstream_pub src/righteyepub.cpp)
+add_executable(lstream_sub src/lefteyesub.cpp)
+add_executable(rstream_sub src/righteyesub.cpp)
+add_executable(opencv src/opencv.cpp)
 #add_executable(telebot_pub pubnode.py)
 
 ## Add cmake target dependencies of the executable/library
@@ -121,9 +130,18 @@ add_executable(stream_pub src/streampub.cpp)
 # target_link_libraries(telebot_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(telebot_pub ${catkin_LIBRARIES})
-target_link_libraries(telebot_sub ${catkin_LIBRARIES})
-target_link_libraries(stream_pub ${catkin_LIBRARIES})
+target_link_libraries(motion_pub ${catkin_LIBRARIES})
+target_link_libraries(motion_sub ${catkin_LIBRARIES})
+target_link_libraries(mobility_pub ${catkin_LIBRARIES})
+target_link_libraries(mobility_sub ${catkin_LIBRARIES})
+target_link_libraries(rstream_pub ${catkin_LIBRARIES})
+target_link_libraries(lstream_pub ${catkin_LIBRARIES})
+target_link_libraries(rstream_sub ${catkin_LIBRARIES})
+target_link_libraries(lstream_sub ${catkin_LIBRARIES})
+target_link_libraries(opencv ${OpenCV_LIBS})
+#target_link_libraries(rstream_sub ${OpenCV_LIBS})
+#target_link_libraries(lstream_sub ${OpenCV_LIBS})
+
 #target_link_libraries(telebot
 #	${catkin_LIBRARIES})
 

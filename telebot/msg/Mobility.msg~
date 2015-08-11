@@ -1,0 +1,5 @@
+int16 xax
+int16 yax
+int4 b1
+int4 b2 
+int4 b3

@@ -3,7 +3,6 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <sstream>
-#include "SimpleSerial.h"
 
 int main(int argc, char **argv){
 
@@ -11,9 +10,9 @@ int main(int argc, char **argv){
 	ros::NodeHandle nh;
   	image_transport::ImageTransport it(nh);
 	
-	image_transport::Publisher pub = it.advertise("stream_img", 1);
+	image_transport::Publisher pub = it.advertise("lstream_img", 1);
 
-	std::istringstream video_sourceCmd("/dev/video0");
+	std::istringstream video_sourceCmd("/dev/TelebotLeftEye");
         int video_source;
         // Check if it is indeed a number
         //if(!(video_sourceCmd >> video_source)) return 1;
@@ -24,7 +23,7 @@ int main(int argc, char **argv){
         cv::Mat frame;
         sensor_msgs::ImagePtr msg;
   
-        ros::Rate loop_rate(5);
+        ros::Rate loop_rate(10);
         while (nh.ok()) {
           cap >> frame;
           // Check if grabbed frame is actually full with some content

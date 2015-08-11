@@ -1,4 +1,3 @@
-//Author: Yonah Elorza
 //This program subscribes to telebot and shows its messages on the screen
 
 //This header defines the standard ROS classes.

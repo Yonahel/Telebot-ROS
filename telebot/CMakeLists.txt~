@@ -53,6 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
      FILES
      Coord.msg
+     Mobility.msg
 #    Message2.msg
 )
 
@@ -108,9 +109,12 @@ catkin_package(
 
 ## Declare a cpp executable
 # add_executable(telebot_node src/telebot_node.cpp)
-add_executable(telebot_pub pubnode.cpp)
-add_executable(telebot_sub subnode.cpp)
-add_executable(stream_pub streampub.cpp)
+add_executable(motion_pub src/motionpub.cpp)
+add_executable(motion_sub src/motionsub.cpp)
+add_executable(lstream_pub src/lefteye.cpp)
+add_executable(rstream_pub src/righteye.cpp)
+add_executable(mobility_pub src/mobilitypub.cpp)
+add_executable(mobility_sub src/mobilitysub.cpp)
 #add_executable(telebot_pub pubnode.py)
 
 ## Add cmake target dependencies of the executable/library
@@ -121,9 +125,12 @@ add_executable(stream_pub streampub.cpp)
 # target_link_libraries(telebot_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(telebot_pub ${catkin_LIBRARIES})
-target_link_libraries(telebot_sub ${catkin_LIBRARIES})
-target_link_libraries(stream_pub ${catkin_LIBRARIES})
+target_link_libraries(motion_pub ${catkin_LIBRARIES})
+target_link_libraries(motion_sub ${catkin_LIBRARIES})
+target_link_libraries(lstream_pub ${catkin_LIBRARIES})
+target_link_libraries(rstream_pub ${catkin_LIBRARIES})
+target_link_libraries(mobility_pub ${catkin_LIBRARIES})
+target_link_libraries(mobility_sub ${catkin_LIBRARIES})
 #target_link_libraries(telebot
 #	${catkin_LIBRARIES})
 
